@@ -27,7 +27,7 @@ public function CreateTable($sql)
         return true;
     }
     catch (\PDOException $e){
-        echo "<div style='color: red'>.Your Connection Failed:</div>".$e->getMessage();
+        echo "<div style='color: red'>.Your Connection is Failed:</div>".$e->getMessage();
         return false;
     }
 }
