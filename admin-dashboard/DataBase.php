@@ -60,6 +60,52 @@ class DataBase
         }
     }
 
+    public function update($tableName,$id,$fields,$values)
+    {
+        $sql="UPDATE `".$tableName."` SET";
+        foreach (array_combine($fields,$values) as $field=>$value)
+        {
+            if ($values)
+                $sql.=" `".$tableName."` = ? ,";
+            else
+                $sql.=" `".$tableName."` = NULL ,";
+        }
+        $sql.=" `updated_at` = now() ";
+        $sql.=" WHERE `id` = ? ";
+        try
+        {
+            $stmt=$this->connection->prepare($sql);
+            $affectedrows=$stmt->execute(array_merge(array_filter(array_values($values))[$id]));
+            if (isset($affectedrows)) {
+                echo "Records are updated";
+            }
+            return true;
+        }
+        catch (PDOException $e)
+        {
+            echo "<div style='color:red;'> There is some problem in connection :</div>". $e->getMessage();
+            return false;
+        }
+    }
+
+    public function delete($tableName,$id)
+    {
+        $sql="DELETE FROM ".$tableName." WHERE `id` = ? ;";
+        try {
+            $stmt=$this->connection->prepare($sql);
+            $affectedrows=$stmt->execute([$id]);
+            if (isset($affectedrows)) {
+                echo "Records are Deleted";
+            }
+            return true;
+        }
+        catch (PDOException $e)
+        {
+            echo "<div style='color:red;'> There is some problem in connection :</div>". $e->getMessage();
+            return false;
+        }
+    }
+
     public function createTable($sql)
     {
         try{
@@ -71,10 +117,7 @@ class DataBase
             echo "<div style='color:red;'> There is some problem in connection :</div>". $e->getMessage();
             return false;
         }
-
-
     }
-
 }
 
 
