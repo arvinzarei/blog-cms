@@ -17,7 +17,6 @@ class Category extends Admin{
         $db= new DataBase();
         $category = $db->select("SELECT * FROM `categories` WHERE (`id` = ?); ",[$id])->fetch();
         require_once (realpath(dirname(__FILE__). "/../template/admin/categories/show.php"));
-
     }
 
     public function create()
@@ -30,7 +29,6 @@ class Category extends Admin{
         $db= new DataBase();
         $db->insert('categories',array_keys($request) , $request);
         $this->redirect('category');
-
     }
 
     public function edit($id)
@@ -38,7 +36,6 @@ class Category extends Admin{
         $db= new DataBase();
         $category = $db->select("SELECT * FROM `categories` WHERE `id` = ? ;", [$id])->fetch();
         require_once (realpath(dirname(__FILE__). "/../template/admin/categories/edit.php"));
-
     }
 
     public function update($request,$id)
@@ -46,8 +43,6 @@ class Category extends Admin{
         $db= new DataBase();
         $db->update('categories',$id,array_keys($request),$request);
         $this->redirect('category');
-
-
     }
 
     public function delete($id)
@@ -55,6 +50,5 @@ class Category extends Admin{
         $db= new DataBase();
         $db->delete('categories',$id);
         $this->redirectBack();
-
     }
 }
