@@ -7,12 +7,10 @@ require_once(realpath(dirname(__FILE__) . "/../layouts/head-tag.php"));
 
 <section class="row my-3">
     <section class="col-12">
-        <form method="post" action="http://localhost/admin-panel/category/update/<?php echo $id;
-        ?>">
+        <form method="post" action="http://localhost/admin-panel/category/update/<?php echo $id; ?>">
             <div class="form-group">
                 <label for="name">Title</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="Enter name ..."
-                       value="<?php echo $category['name']; ?>">
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter name ..." value="<?php echo $category['name']; ?>">
                 <!--            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
             </div>
             <button type="submit" class="btn btn-primary btn-sm">update</button>

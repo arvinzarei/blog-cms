@@ -4,7 +4,7 @@ require_once(realpath(dirname(__FILE__) . "/../layouts/head-tag.php"));
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h5 "><i class="fas fa-newspaper"></i> Categories</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
-            <a role="button" href="#" class="btn btn-sm btn-success">create</a>
+            <a role="button" href="http://localhost/admin-panel/category/create" class="btn btn-sm btn-success">create</a>
         </div>
     </div>
     <div class="table-responsive">
@@ -23,12 +23,8 @@ require_once(realpath(dirname(__FILE__) . "/../layouts/head-tag.php"));
                 <td><?php echo $category["id"] ?></td>
                 <td><?php echo $category["name"] ?></td>
                 <td>
-                    <a role="button" href="http://localhost/admin-panel/category/edit/<?php echo $category['id'];
-                    ?>" class="btn btn-sm btn-info my-0
-                    mx-1 text-white">update</a>
-                    <a role="button" href="http://localhost/admin-panel/category/delete/<?php echo $category['id'];
-                    ?>" class="btn btn-sm
-    btn-danger my-0 mx-1 text-white">delete</a>
+                    <a role="button" href="http://localhost/admin-panel/category/edit/<?php echo $category['id']; ?>" class="btn btn-sm btn-info my-0 mx-1 text-white">update</a>
+                    <a role="button" href="http://localhost/admin-panel/category/delete/<?php echo $category['id']; ?>" class="btn btn-sm btn-danger my-0 mx-1 text-white">delete</a>
                 </td>
             </tr>
     <?php } ?>

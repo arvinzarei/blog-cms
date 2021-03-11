@@ -13,7 +13,7 @@ class DataBase
     private $dbHost= "localhost";
     private $dbName= "blog";
     private $dbUsername="root";
-    private $dbPassword = "mysql";
+    private $dbPassword = "";
 
     function __construct()
     {
@@ -22,7 +22,7 @@ class DataBase
                 $this->dbPassword,$this->option);
         }
         catch (PDOException $e){
-            echo "<div> style='color:red;'> There is some problem in connection :</div>". $e->getMessage();
+            echo "<div style='color:red;'> There is some problem in connection :</div>". $e->getMessage();
         }
 
     }
@@ -41,7 +41,7 @@ class DataBase
             }
         }
         catch (PDOException $e){
-            echo "<div> style='color:red;'> There is some problem in connection :</div>". $e->getMessage();
+            echo "<div style='color:red;'> There is some problem in connection :</div>". $e->getMessage();
             return false;
         }
     }
@@ -54,7 +54,7 @@ class DataBase
             return true;
         }
         catch (PDOException $e){
-            echo "<div> style='color:red;'> There is some problem in connection :</div>". $e->getMessage();
+            echo "<div style='color:red;'> There is some problem in connection :</div>". $e->getMessage();
             return false;
         }
     }
@@ -78,7 +78,7 @@ class DataBase
             }
             return true;
         } catch (PDOException $e) {
-            echo "<div> style='color:red;'> There is some problem in connection :</div>" . $e->getMessage();
+            echo "<div style='color:red;'> There is some problem in connection :</div>" . $e->getMessage();
             return false;
         }
     }
@@ -95,7 +95,7 @@ class DataBase
             return true;
         }
         catch (PDOException $e) {
-            echo "<div> style='color:red;'> There is some problem in connection :</div>" . $e->getMessage();
+            echo "<div style='color:red;'> There is some problem in connection :</div>" . $e->getMessage();
             return false;
         }
     }
@@ -109,7 +109,7 @@ class DataBase
             return true;
         }
         catch (PDOException $e){
-            echo "<div> style='color:red;'> There is some problem in connection :</div>". $e->getMessage();
+            echo "<div style='color:red;'> There is some problem in connection :</div>". $e->getMessage();
             return false;
         }
 

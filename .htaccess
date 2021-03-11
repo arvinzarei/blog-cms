@@ -2,4 +2,4 @@ RewriteEngine On
 RewriteBase /
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.+)$ php-project/index.php [QSA,L]
+RewriteRule ^(.+)$ admin-panel/index.php [QSA,L]
