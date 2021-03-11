@@ -24,7 +24,7 @@ require_once(realpath(dirname(__FILE__) . "/../layouts/head-tag.php"));
             </tr>
         </thead>
         <tbody>
-        <?php foreach ($articles as $article) ?>
+        <?php foreach ($articles as $article) { ?>
             <tr>
                 <td><a class="text-primary" href="http://localhost/admin-panel/article/show/<?php echo $article['id']; ?>">
                         <?php echo $article['id'] ?></a></td>
@@ -39,6 +39,7 @@ require_once(realpath(dirname(__FILE__) . "/../layouts/head-tag.php"));
                     <a role="button" class="btn btn-sm btn-danger text-white" href="http://localhost/admin-panel/article/delete/<?php echo $article['id']; ?>">delete</a>
                 </td>
             </tr>
+    <?php } ?>
 <!--            <tr>-->
 <!--                <td><a class="text-primary" href="http://localhost/admin-panel/article/show/2">2</a></td>-->
 <!--                <td>title</td>-->
