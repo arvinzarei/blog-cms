@@ -69,28 +69,6 @@ else{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //category
 uri('category','Category','index');
 uri('category/show/{id}','Category','show');
@@ -99,9 +77,14 @@ uri('category/store','Category','store','POST');
 uri('category/edit/{id}','Category','edit');
 uri('category/update/{id}','Category','update','POST');
 uri('category/delete/{id}','Category','delete');
-
-
-
+//articles
+uri('article','Article','index');
+uri('article/show/{id}','Article','show');
+uri('article/create','Article','create');
+uri('article/store','Article','store','POST');
+uri('article/edit/{id}','Article','edit');
+uri('article/update/{id}','Article','update','POST');
+uri('article/delete/{id}','Article','delete');
 
 
 
