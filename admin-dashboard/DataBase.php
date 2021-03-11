@@ -13,7 +13,7 @@ class DataBase
     private $dbHost= "localhost";
     private $dbName= "blog";
     private $dbUsername="root";
-    private $dbPassword = "";
+    private $dbPassword = "mysql";
 
     function __construct()
     {
@@ -41,11 +41,10 @@ class DataBase
             }
         }
         catch (PDOException $e){
-            echo "<div style='color:red;'> There is some problem in connection :</div>". $e->getMessage();
+            echo "<div> style='color:red;'> There is some problem in connection :</div>". $e->getMessage();
             return false;
         }
     }
-
 
     public function insert($tableName,$fields,$values)
     {
@@ -55,35 +54,31 @@ class DataBase
             return true;
         }
         catch (PDOException $e){
-            echo "<div style='color:red;'> There is some problem in connection :</div>". $e->getMessage();
+            echo "<div> style='color:red;'> There is some problem in connection :</div>". $e->getMessage();
             return false;
         }
     }
 
     public function update($tableName,$id,$fields,$values)
     {
-        $sql="UPDATE `".$tableName."` SET";
-        foreach (array_combine($fields,$values) as $field=>$value)
-        {
+        $sql = "UPDATE `" . $tableName . "` SET";
+        foreach (array_combine($fields, $values) as $field => $value) {
             if ($values)
-                $sql.=" `".$tableName."` = ? ,";
+                $sql .= " `" . $field . "`= ? ,";
             else
-                $sql.=" `".$tableName."` = NULL ,";
+                $sql .= "`" . $field . "`=NULL,";
         }
-        $sql.=" `updated_at` = now() ";
-        $sql.=" WHERE `id` = ? ";
-        try
-        {
-            $stmt=$this->connection->prepare($sql);
-            $affectedrows=$stmt->execute(array_merge(array_filter(array_values($values))[$id]));
+        $sql .= " `updated_at`= now()";
+        $sql .= " WHERE `id` = ?";
+        try {
+            $stm = $this->connection->prepare($sql);
+            $affectedrows = $stm->execute(array_merge(array_filter(array_values($values)), [$id]));
             if (isset($affectedrows)) {
-                echo "Records are updated";
+                echo "records are updated";
             }
             return true;
-        }
-        catch (PDOException $e)
-        {
-            echo "<div style='color:red;'> There is some problem in connection :</div>". $e->getMessage();
+        } catch (PDOException $e) {
+            echo "<div> style='color:red;'> There is some problem in connection :</div>" . $e->getMessage();
             return false;
         }
     }
@@ -91,20 +86,20 @@ class DataBase
     public function delete($tableName,$id)
     {
         $sql="DELETE FROM ".$tableName." WHERE `id` = ? ;";
-        try {
-            $stmt=$this->connection->prepare($sql);
-            $affectedrows=$stmt->execute([$id]);
+        try{
+            $stmt= $this->connection->prepare($sql);
+            $affectedrows = $stmt->execute([$id]);
             if (isset($affectedrows)) {
-                echo "Records are Deleted";
+                echo "records are deleetd";
             }
             return true;
         }
-        catch (PDOException $e)
-        {
-            echo "<div style='color:red;'> There is some problem in connection :</div>". $e->getMessage();
+        catch (PDOException $e) {
+            echo "<div> style='color:red;'> There is some problem in connection :</div>" . $e->getMessage();
             return false;
         }
     }
+
 
     public function createTable($sql)
     {
@@ -114,10 +109,13 @@ class DataBase
             return true;
         }
         catch (PDOException $e){
-            echo "<div style='color:red;'> There is some problem in connection :</div>". $e->getMessage();
+            echo "<div> style='color:red;'> There is some problem in connection :</div>". $e->getMessage();
             return false;
         }
+
+
     }
+
 }
 
 
