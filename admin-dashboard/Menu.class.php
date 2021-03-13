@@ -24,7 +24,7 @@ class Menu extends Admin{
     {
         $db= new DataBase();
         $menus = $db->select('SELECT * FROM `menus` WHERE `parent_id` IS NULL ;');
-        require_once (realpath(dirname(__FILE__). "/../template/admin/menus/index.php"));
+        require_once (realpath(dirname(__FILE__). "/../template/admin/menus/create.php"));
     }
 
     public function store($request)
@@ -42,7 +42,7 @@ class Menu extends Admin{
         require_once (realpath(dirname(__FILE__). "/../template/admin/menus/edit.php"));
     }
 
-    public function update($request,$id)
+    public function update($request, $id)
     {
         $db= new DataBase();
         $db->update('menus',$id,array_keys($request),$request);
