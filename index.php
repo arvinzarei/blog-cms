@@ -2,10 +2,12 @@
 require_once ("admin-dashboard/Category.class.php");
 require_once ("admin-dashboard/Article.class.php");
 require_once ("admin-dashboard/Menu.class.php");
+require_once ("admin-dashboard/WebSetting.class.php");
 require_once ("admin-dashboard/CreateDB.php");
 use AdminDashboard\Category;
 use AdminDashboard\Article;
 use AdminDashboard\Menu;
+use AdminDashboard\WebSetting;
 use  DataBase\CreateDB;
 //
 //$createDB= new CreateDB();
@@ -97,6 +99,10 @@ uri('menu/store','Menu','store','POST');
 uri('menu/edit/{id}','Menu','edit');
 uri('menu/update/{id}','Menu','update','POST');
 uri('menu/delete/{id}','Menu','delete');
+//---------------WebSetting
+uri('web-setting','WebSetting','index');
+uri('web-setting/set','WebSetting','set');
+uri('web-setting/store','WebSetting','store','POST');
 
 
 
