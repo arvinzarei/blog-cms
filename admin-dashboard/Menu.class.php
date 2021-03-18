@@ -9,15 +9,15 @@ class Menu extends Admin{
     public function index()
     {
         $db= new DataBase();
-        $menus = $db->select('SELECT * FROM `menus` ORDER BY `id` DESC ;');
+        $menus = $db->select("SELECT * FROM `menus` ORDER BY `id` DESC ;");
         require_once (realpath(dirname(__FILE__). "/../template/admin/menus/index.php"));
     }
 
     public function show($id)
     {
         $db= new DataBase();
-        $menu = $db->select('SELECT * FROM `menus` ORDER BY `id` DESC ;');
-        require_once (realpath(dirname(__FILE__). "/../template/admin/menus/index.php"));
+        $menu = $db->select("SELECT * FROM `menus` WHERE (`id` = ?);",[$id])->fetch();
+        require_once (realpath(dirname(__FILE__). "/../template/admin/menus/show.php"));
     }
 
     public function create()
