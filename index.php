@@ -1,13 +1,15 @@
 <?php
 require_once ("admin-dashboard/Category.class.php");
 require_once ("admin-dashboard/Article.class.php");
-require_once ("admin-dashboard/Menu.class.php");
 require_once ("admin-dashboard/WebSetting.class.php");
+require_once ("admin-dashboard/User.class.php");
 require_once ("admin-dashboard/CreateDB.php");
+require_once ("admin-dashboard/Menu.class.php");
 use AdminDashboard\Category;
+use AdminDashboard\User;
+use AdminDashboard\WebSetting;
 use AdminDashboard\Article;
 use AdminDashboard\Menu;
-use AdminDashboard\WebSetting;
 use  DataBase\CreateDB;
 //
 //$createDB= new CreateDB();
@@ -72,10 +74,7 @@ else{
 
 
 
-
-
-
-//--------------category
+//category
 uri('category','Category','index');
 uri('category/show/{id}','Category','show');
 uri('category/create','Category','create');
@@ -83,7 +82,8 @@ uri('category/store','Category','store','POST');
 uri('category/edit/{id}','Category','edit');
 uri('category/update/{id}','Category','update','POST');
 uri('category/delete/{id}','Category','delete');
-//------------articles
+
+//article
 uri('article','Article','index');
 uri('article/show/{id}','Article','show');
 uri('article/create','Article','create');
@@ -91,7 +91,8 @@ uri('article/store','Article','store','POST');
 uri('article/edit/{id}','Article','edit');
 uri('article/update/{id}','Article','update','POST');
 uri('article/delete/{id}','Article','delete');
-//---------------menu
+
+//menu
 uri('menu','Menu','index');
 uri('menu/show/{id}','Menu','show');
 uri('menu/create','Menu','create');
@@ -99,10 +100,21 @@ uri('menu/store','Menu','store','POST');
 uri('menu/edit/{id}','Menu','edit');
 uri('menu/update/{id}','Menu','update','POST');
 uri('menu/delete/{id}','Menu','delete');
-//---------------WebSetting
+
+//users
+uri('user','User','index');
+uri('user/permission/{id}','User','permission');
+uri('user/edit/{id}','User','edit');
+uri('user/update/{id}','User','update','POST');
+uri('user/delete/{id}','User','delete');
+
+//web setting
 uri('web-setting','WebSetting','index');
 uri('web-setting/set','WebSetting','set');
 uri('web-setting/store','WebSetting','store','POST');
+
+
+
 
 
 
