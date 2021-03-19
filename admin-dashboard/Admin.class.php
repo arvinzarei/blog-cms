@@ -2,6 +2,12 @@
 namespace AdminDashboard;
 
 class Admin{
+
+    function __construct(){
+        $auth= new Auth();
+        $auth->checkAdmin();
+    }
+
     protected function redirect($url){
         $prtocol= stripos($_SERVER['SERVER_PROTOCOL'],'https')=== true ? 'https://' : 'http://';
         header("Location: ".$prtocol.$_SERVER['HTTP_HOST']."/admin-panel/".$url);
