@@ -5,11 +5,13 @@ require_once ("admin-dashboard/WebSetting.class.php");
 require_once ("admin-dashboard/User.class.php");
 require_once ("admin-dashboard/CreateDB.php");
 require_once ("admin-dashboard/Menu.class.php");
+require_once ("admin-dashboard/Auth.class.php");
 use AdminDashboard\Category;
 use AdminDashboard\User;
 use AdminDashboard\WebSetting;
 use AdminDashboard\Article;
 use AdminDashboard\Menu;
+use AdminDashboard\Auth;
 use  DataBase\CreateDB;
 //
 //$createDB= new CreateDB();
@@ -70,11 +72,7 @@ else{
 
 }
 
-
-
-
-
-//category
+//categories Routing
 uri('category','Category','index');
 uri('category/show/{id}','Category','show');
 uri('category/create','Category','create');
@@ -83,7 +81,7 @@ uri('category/edit/{id}','Category','edit');
 uri('category/update/{id}','Category','update','POST');
 uri('category/delete/{id}','Category','delete');
 
-//article
+//articles Routing
 uri('article','Article','index');
 uri('article/show/{id}','Article','show');
 uri('article/create','Article','create');
@@ -92,7 +90,7 @@ uri('article/edit/{id}','Article','edit');
 uri('article/update/{id}','Article','update','POST');
 uri('article/delete/{id}','Article','delete');
 
-//menu
+//menus Routing 
 uri('menu','Menu','index');
 uri('menu/show/{id}','Menu','show');
 uri('menu/create','Menu','create');
@@ -101,22 +99,24 @@ uri('menu/edit/{id}','Menu','edit');
 uri('menu/update/{id}','Menu','update','POST');
 uri('menu/delete/{id}','Menu','delete');
 
-//users
+//users Routing
 uri('user','User','index');
 uri('user/permission/{id}','User','permission');
 uri('user/edit/{id}','User','edit');
 uri('user/update/{id}','User','update','POST');
 uri('user/delete/{id}','User','delete');
 
-//web setting
+//web-setting Routing
 uri('web-setting','WebSetting','index');
 uri('web-setting/set','WebSetting','set');
 uri('web-setting/store','WebSetting','store','POST');
 
-
-
-
-
+//auth Routing
+uri('login','Auth','login');
+uri('check-login','Auth','checkLogin','POST');
+uri('register','Auth','register');
+uri('register/store','Auth','registerStore','POST');
+uri('logout','Auth','logout');
 
 
 
