@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>html and css project</title>
+    <title><?php echo $setting['title'];?></title>
 
 
     <link href="http://localhost/admin-panel/public/css/app/style.css" rel="stylesheet" type="text/css">
@@ -17,18 +16,22 @@
 <section class="app">
     <header>
         <nav class="header">
-            <img class="header-logo" src="http://localhost/admin-panel/public/images/logo-black.png" alt="">
+            <img class="header-logo" src="http://localhost/admin-panel/public/setting/icon.jpeg" alt="">
             <button class="header-menu-burger" onclick="showMenu()" type="button"><i class="fas fa-bars"></i></button>
             <ul class="header-menu" id="menu">
-                <li class="header-menu-item"><a class="header-menu-item-link"  href="#">Home</a></li>
-                <li class="header-menu-item"><a class="header-menu-item-link"  href="#">News</a></li>
-                <li class="header-menu-item"><a class="header-menu-item-link"  href="#">Economic</a></li>
-                <li class="header-menu-item"><a class="header-menu-item-link"  href="#">Sport</a>
+            <?php foreach ($menus as $menu) {?>
+                <li class="header-menu-item"><?php if($menu['parent_id'] == null) { ?><a class="header-menu-item-link"  
+                 href="<?php echo $menu['url']; ?>"><?php echo $menu['name']; ?></a><?php } ?>
+                 <?php if($menu['submenu_count'] > 0) { ?>
                     <span>
-                        <a href="#">football</a>
-                        <a href="#">basketball</a>
+                    <?php foreach($submenus as $submenu) { 
+                        if($submenu['parent_id'] == $menu['id']){ ?>
+                         <a href="<?php echo $submenu['url']; ?>"><?php echo $submenu['name']; ?></a>
+                         <?php }} ?>
                     </span>
+                 <?php } ?>
                 </li>
+            <?php } ?>
             </ul>
             <section class="clear-fix"></section>
         </nav><!--end of navbar-->
