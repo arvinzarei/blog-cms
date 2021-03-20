@@ -6,12 +6,14 @@ require_once ("admin-dashboard/User.class.php");
 require_once ("admin-dashboard/CreateDB.php");
 require_once ("admin-dashboard/Menu.class.php");
 require_once ("admin-dashboard/Auth.class.php");
+require_once ("admin-dashboard/Home.class.php");
 use AdminDashboard\Category;
 use AdminDashboard\User;
 use AdminDashboard\WebSetting;
 use AdminDashboard\Article;
 use AdminDashboard\Menu;
 use AdminDashboard\Auth;
+use AdminDashboard\Home;
 use  DataBase\CreateDB;
 //
 //$createDB= new CreateDB();
@@ -118,6 +120,11 @@ uri('register','Auth','register');
 uri('register/store','Auth','registerStore','POST');
 uri('logout','Auth','logout');
 
+//Home Routing
+uri('home','Home','index');
+uri('show-article/{id}','Home','show');
+uri('show-category/{id}','Home','category');
+uri('comment-store','Home','commentStore','POST');
 
 
 
