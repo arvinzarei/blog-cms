@@ -48,29 +48,19 @@ class Home{
         $commentsCount=$db->select("select COUNT(*) FROM `comments` WHERE `article_id` = ?;",[$id])->fetch();
         $comments=$db->select("select *,(select `username` FROM `users` WHERE `users`.`id` = `comments`.`user_id`) as `username` 
         FROM `comments` WHERE `article_id` = ? and `status` = 'approved' ORDER BY `created_at` DESC ;",[$id])->fetchAll();
-//query for Increase Views
-        $db->update('articles',$id,['view'],[$article['view']+1]);
+        $db->update('articles',$id,['view'],[$article['view']+1]); //query for Increase Views
 
 //Query for Select 4 popularArticles
         $popularArticles = $db->select("SELECT articles.*, 
             (SELECT COUNT(*) FROM comments WHERE comments.article_id = articles.id) AS comments_count, 
             (SELECT username FROM users WHERE users.id = articles.user_id) AS username 
             FROM articles  ORDER BY `view` DESC LIMIT 0,4 ;")->fetchAll();
-
         $sidebarPopularArticles = $popularArticles;
-
-//Query for Select All Categories
         $categories = $db->select('SELECT * FROM `categories` ORDER BY `id` DESC ;');
-
-//Query for Select All Menus and count of subMenus
         $menus = $db->select('SELECT *, 
             (SELECT COUNT(*) FROM `menus` AS `submenus` WHERE `submenus`.`parent_id` = `menus`.`id`  ) as `submenu_count`  
             FROM `menus` WHERE `parent_id` IS NULL ;')->fetchAll();
-
-//Query for Select All subMenus
         $submenus = $db->select('SELECT * FROM `menus` WHERE `parent_id` IS NOT NULL ;')->fetchAll();
-
- //Query for Select All WebSetting
         $setting= $db->select("SELECT * FROM `websetting`;")->fetch();
 
         require_once (realpath(dirname(__FILE__) . "/../template/app/show-article.php"));
@@ -78,7 +68,18 @@ class Home{
 
     public function category($id)
     {
-        
+        $db = new DataBase();
+        $category = $db->select("SELECT * FROM `categories` WHERE `id` = ? ORDER BY `id` DESC ;", [$id])->fetch();
+        $articles = $db->select("SELECT articles.*, (SELECT COUNT(*) FROM comments WHERE comments.article_id = articles.id) AS comments_count, (SELECT username FROM users WHERE users.id = articles.user_id) AS username FROM articles WHERE (articles.cat_id = ?) ;", [$id])->fetchAll();
+
+        $popularArticles = $db->select("SELECT articles.*, (SELECT COUNT(*) FROM comments WHERE comments.article_id = articles.id) AS comments_count, (SELECT username FROM users WHERE users.id = articles.user_id) AS username FROM articles  ORDER BY `view` DESC LIMIT 0,4 ;")->fetchAll();
+        $sidebarPopularArticles = $popularArticles;
+        $categories = $db->select('SELECT * FROM `categories` ORDER BY `id` DESC ;');
+        $menus = $db->select('SELECT *, (SELECT COUNT(*) FROM `menus` AS `submenus` WHERE `submenus`.`parent_id` = `menus`.`id`  ) as `submenu_count`  FROM `menus` WHERE `parent_id` IS NULL ;')->fetchAll();
+        $submenus = $db->select('SELECT * FROM `menus` WHERE `parent_id` IS NOT NULL ;')->fetchAll();
+        $setting= $db->select("SELECT * FROM `websetting`;")->fetch();
+
+        require_once (realpath(dirname(__FILE__) . "/../template/app/show-category.php"));
     }
 
     public function commentStore($request)
