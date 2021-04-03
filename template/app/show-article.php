@@ -48,17 +48,12 @@ if (isset($_SESSION['user'])) {
                 </section><!--end of main news-->
             </main><!--end of main-->
 
-            <?php
-            require_once(realpath(dirname(__FILE__) . "/../app/layouts/sidebar.php"));
-            ?>
-
-
+ <?php require_once(realpath(dirname(__FILE__) . "/../app/layouts/sidebar.php")); ?>
 
             <section class="clear-fix"></section>
         </section><!--end of container-->
     </section><!--end of content-->
     </section><!--end of first app section-->
-
 
 <?php
 require_once(realpath(dirname(__FILE__) . "/../app/layouts/footer.php"));
