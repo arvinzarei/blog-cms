@@ -74,7 +74,7 @@ class DataBase
             $stm = $this->connection->prepare($sql);
             $affectedrows = $stm->execute(array_merge(array_filter(array_values($values)), [$id]));
             if (isset($affectedrows)) {
-                echo "records are updated";
+//                echo "records are updated";
             }
             return true;
         } catch (PDOException $e) {
