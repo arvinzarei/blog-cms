@@ -5,108 +5,122 @@ require_once(realpath(dirname(__FILE__) . "/../app/layouts/head-tag.php"));
     <section class="content">
         <section class="intro intro-h-600px">
             <section class="intro-row intro-h-2-3 mb-10x">
-
+<!--          POST 1          -->
+<?php if(isset($articles[0])) {?>
                 <section class="intro-2-3-col intro-h-100 position-relative h-md-300px">
-                    <a href="http://localhost/admin-panel/show-article/1">
-                        <section class="intro-2-3-item img-bg intro-h-100" style="background: url(http://localhost/admin-panel) no-repeat center; background-size: cover;"></section>
+                    <a href="http://localhost/admin-panel/show-article/<?php echo $articles[0]['id']; ?> ">
+                        <section class="intro-2-3-item img-bg intro-h-100" style="background: url(http://localhost/admin-panel/<?php echo $articles[0]['image']; ?>) no-repeat center; background-size: cover;"></section>
                         <section class="intro-item-caption">
                             <h3 class="caption-title">
-                                <span>Lorem ipsum dolor sit amet.</span>
+                                <span><?php echo $articles[0]['title']; ?></span>
                             </h3>
                             <ul class="caption-info-bar">
-                                <li class="">by <b class="text-yellow">Kamren,</b> feb 19 2019</li>
-                                <li><i class="fas fa-bolt text-yellow"></i> 21</li>
+                                <li class="">by <b class="text-yellow"><?php echo $articles[0]['username']; ?></b> <?php echo date("M d,Y",strtotime( $articles[0]['created_at'])); ?></li>
+                                <li><i class="fas fa-bolt text-yellow"></i> <?php echo $articles[0]['view']; ?></li>
                                 <li><i class="fas fa-comments text-yellow"></i> 19</li>
                             </ul>
                         </section>
                     </a>
                 </section>
-                <section class="intro-1-3-col intro-h-100">
+<?php }?>
 
+<section class="intro-1-3-col intro-h-100">
+<!--          POST 2          -->
+<?php if(isset($articles[1])) {?>
                     <section class="intro-1-3-item intro-h-50 position-relative h-md-300px">
-                        <a href="http://localhost/admin-panel/show-article/2">
-                            <section class="img-bg intro-h-100" style="background: url(http://localhost/admin-panel) no-repeat center; background-size: cover;"></section>
+                        <a href="http://localhost/admin-panel/show-article/<?php echo $articles[1]['id']; ?>">
+                            <section class="img-bg intro-h-100" style="background: url(http://localhost/admin-panel/<?php echo $articles[1]['image']; ?>) no-repeat center; background-size: cover;"></section>
                             <section class="intro-item-caption">
                                 <h3 class="caption-title">
-                                    <b>Lorem ipsum dolor sit amet, consectetur.</b>
+                                    <b><?php echo $articles[1]['title']; ?></b>
                                 </h3>
                                 <ul class="caption-info-bar">
-                                    <li>feb 19 2019</li>
-                                    <li><i class="fas fa-bolt text-yellow"></i> 81</li>
+                                    <li> <?php echo date("M d,Y",strtotime( $articles[1]['created_at'])); ?></li>
+                                    <li><i class="fas fa-bolt text-yellow"></i><?php echo $articles[1]['view']; ?></li>
                                     <li><i class="fas fa-comments text-yellow"></i> 32</li>
                                 </ul>
                             </section>
                         </a>
 
                     </section>
-
+<?php }?>
+<!--          POST 3          -->
+<?php if(isset($articles[2])) {?>
                     <section class="intro-1-3-item intro-h-50 position-relative h-md-300px">
-                        <a href="http://localhost/admin-panel/show-article/3">
-                            <section class="img-bg intro-h-100" style="background: url(http://localhost/admin-panel) no-repeat center; background-size: cover;"></section>
+                        <a href="http://localhost/admin-panel/show-article/<?php echo $articles[2]['id']; ?>">
+                            <section class="img-bg intro-h-100" style="background: url(http://localhost/admin-panel/<?php echo $articles[2]['image']; ?>) no-repeat center; background-size: cover;"></section>
                             <section class="intro-item-caption">
                                 <h3 class="caption-title">
-                                    <b>Lorem ipsum dolor.</b>
+                                    <b><?php echo $articles[2]['title']; ?></b>
                                 </h3>
                                 <ul class="caption-info-bar">
-                                    <li>feb 19 2019</li>
-                                    <li><i class="fas fa-bolt text-yellow"></i> 7</li>
+                                    <li> <?php echo date("M d,Y",strtotime( $articles[2]['created_at'])); ?></li>
+                                    <li><i class="fas fa-bolt text-yellow"></i> <?php echo $articles[2]['view']; ?></li>
                                     <li><i class="fas fa-comments text-yellow"></i> 3</li>
                                 </ul>
                             </section>
                         </a>
                     </section>
-
+<?php }?>
                 </section>
                 <section class="clear-fix"></section>
             </section>
 
             <section class="intro-row intro-h-1-3">
+<!--          POST 4          -->
+<?php if(isset($articles[3])) {?>
                 <section class="intro-1-3-col-item intro-h-100 position-relative h-md-300px">
-                    <a href="http://localhost/admin-panel/show-article/4">
-                        <section class="img-bg intro-h-100" style="background: url(http://localhost/admin-panel) no-repeat center; background-size: cover;"></section>
+                    <a href="http://localhost/admin-panel/show-article/ <?php echo $articles[3]['id']; ?>">
+                        <section class="img-bg intro-h-100" style="background: url(http://localhost/admin-panel/<?php echo $articles[3]['image']; ?>) no-repeat center; background-size: cover;"></section>
                         <section class="intro-item-caption">
                             <h3 class="caption-title">
-                                <b>Lorem ipsum dolor sit amet.</b>
+                                <b> <?php echo $articles[3]['title']; ?></b>
                             </h3>
                             <ul class="caption-info-bar">
-                                <li>feb 19 2019</li>
-                                <li><i class="fas fa-bolt text-yellow"></i> 43</li>
+                                <li> <?php echo date("M d,Y",strtotime( $articles[3]['created_at'])); ?></li>
+                                <li><i class="fas fa-bolt text-yellow"></i>  <?php echo $articles[3]['view']; ?></li>
                                 <li><i class="fas fa-comments text-yellow"></i> 8</li>
                             </ul>
                         </section>
                     </a>
                 </section>
+<?php }?>
+<!--          POST 5          -->
+<?php if(isset($articles[4])) {?>
                 <section class="intro-1-3-col-item intro-h-100 position-relative h-md-300px">
-                    <a href="http://localhost/admin-panel/show-article/1">
-                        <section class="img-bg intro-h-100" style="background: url(http://localhost/admin-panel) no-repeat center; background-size: cover;"></section>
+                    <a href="http://localhost/admin-panel/show-article/<?php echo $articles[4]['id']; ?>">
+                        <section class="img-bg intro-h-100" style="background: url(http://localhost/admin-panel/<?php echo $articles[4]['image']; ?>) no-repeat center; background-size: cover;"></section>
                         <section class="intro-item-caption">
                             <h3 class="caption-title">
-                                <b>Lorem ipsum dolor sit.</b>
+                                <b><?php echo $articles[4]['title']; ?></b>
                             </h3>
                             <ul class="caption-info-bar">
-                                <li>feb 19 2019</li>
-                                <li><i class="fas fa-bolt text-yellow"></i> 32</li>
+                                <li> <?php echo date("M d,Y",strtotime( $articles[4]['created_at'])); ?></li>
+                                <li><i class="fas fa-bolt text-yellow"></i> <?php echo $articles[4]['view']; ?></li>
                                 <li><i class="fas fa-comments text-yellow"></i> 12</li>
                             </ul>
                         </section>
                     </a>
                 </section>
-
+ <?php }?>
+<!--          POST 6          -->
+<?php if(isset($articles[5])) {?>
                 <section class="intro-1-3-col-item intro-h-100 position-relative h-md-300px">
-                    <a href="http://localhost/admin-panel/show-article/5">
-                        <section class="img-bg intro-h-100" style="background: url(http://localhost/admin-panel) no-repeat center; background-size: cover;"></section>
+                    <a href="http://localhost/admin-panel/show-article/<?php echo $articles[5]['id']; ?>">
+                        <section class="img-bg intro-h-100" style="background: url(http://localhost/admin-panel/<?php echo $articles[5]['image']; ?>) no-repeat center; background-size: cover;"></section>
                         <section class="intro-item-caption">
                             <h3 class="caption-title">
-                                <b>Lorem ipsum dolor sit amet, consectetur.</b>
+                                <b><?php echo $articles[5]['title']; ?></b>
                             </h3>
                             <ul class="caption-info-bar">
-                                <li>feb 19 2019</li>
-                                <li><i class="fas fa-bolt text-yellow"></i> 94</li>
+                                <li> <?php echo date("M d,Y",strtotime( $articles[5]['created_at'])); ?></li>
+                                <li><i class="fas fa-bolt text-yellow"></i> <?php echo $articles[5]['view']; ?></li>
                                 <li><i class="fas fa-comments text-yellow"></i> 43</li>
                             </ul>
                         </section>
                     </a>
                 </section>
+<?php }?>
                 <section class="clear-fix"></section>
             </section>
         </section><!--end of intro-->
