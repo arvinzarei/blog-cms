@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once(realpath(dirname(__FILE__) . "/../app/layouts/head-tag.php"));
 ?>
     <section class="content">

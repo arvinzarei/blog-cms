@@ -36,15 +36,15 @@ require_once(realpath(dirname(__FILE__) . "/../app/layouts/head-tag.php"));
                              <?php echo $comment['comment']; ?>
                             </comment>
                         </section>
-<?php  }
-if (isset($_SESSION['user'])) {
-?>
-                    <form action="http://localhost/admin-panel/comment-store" method="post">
-                            <input name="article_id" type="hidden" value="1">
-                        <textarea class="comment" name="comment" rows="4" required placeholder="your comment ..."></textarea>
-                        <input class="submit" type="submit" value="store comment">
-                    </form>
-<?php  }?>
+                    <?php  }
+                    if (isset($_SESSION['user'])) {
+                    ?>
+                        <form action="http://localhost/admin-panel/comment-store" method="post">
+                                <input name="article_id" type="hidden" value="1">
+                            <textarea class="comment" name="comment" rows="4" required placeholder="your comment ..."></textarea>
+                            <input class="submit" type="submit" value="store comment">
+                        </form>
+                    <?php  }?>
                 </section><!--end of main news-->
             </main><!--end of main-->
 
