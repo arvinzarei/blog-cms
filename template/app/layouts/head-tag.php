@@ -16,7 +16,7 @@
 <section class="app">
     <header>
         <nav class="header">
-            <img class="header-logo" src="http://localhost/admin-panel/public/setting/icon.jpeg" alt="">
+            <img class="header-logo" src="http://localhost/admin-panel/<?php echo $setting['logo'];?>" alt="">
             <button class="header-menu-burger" onclick="showMenu()" type="button"><i class="fas fa-bars"></i></button>
             <ul class="header-menu" id="menu">
             <?php foreach ($menus as $menu) {?>

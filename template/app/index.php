@@ -16,8 +16,8 @@ require_once(realpath(dirname(__FILE__) . "/../app/layouts/head-tag.php"));
                             </h3>
                             <ul class="caption-info-bar">
                                 <li class="">by <b class="text-yellow"><?php echo $articles[0]['username']; ?></b> <?php echo date("M d,Y",strtotime( $articles[0]['created_at'])); ?></li>
-                                <li><i class="fas fa-bolt text-yellow"></i> <?php echo $articles[0]['view']; ?></li>
-                                <li><i class="fas fa-comments text-yellow"></i> 19</li>
+                                <li><i class="fas fa-bolt text-yellow"></i><?php echo $articles[0]['view']; ?></li>
+                                <li><i class="fas fa-comments text-yellow"></i><?php echo $articles[0]['comments_count']; ?></li>
                             </ul>
                         </section>
                     </a>
@@ -37,7 +37,7 @@ require_once(realpath(dirname(__FILE__) . "/../app/layouts/head-tag.php"));
                                 <ul class="caption-info-bar">
                                     <li> <?php echo date("M d,Y",strtotime( $articles[1]['created_at'])); ?></li>
                                     <li><i class="fas fa-bolt text-yellow"></i><?php echo $articles[1]['view']; ?></li>
-                                    <li><i class="fas fa-comments text-yellow"></i> 32</li>
+                                    <li><i class="fas fa-comments text-yellow"></i><?php echo $articles[1]['comments_count']; ?></li>
                                 </ul>
                             </section>
                         </a>
@@ -55,8 +55,8 @@ require_once(realpath(dirname(__FILE__) . "/../app/layouts/head-tag.php"));
                                 </h3>
                                 <ul class="caption-info-bar">
                                     <li> <?php echo date("M d,Y",strtotime( $articles[2]['created_at'])); ?></li>
-                                    <li><i class="fas fa-bolt text-yellow"></i> <?php echo $articles[2]['view']; ?></li>
-                                    <li><i class="fas fa-comments text-yellow"></i> 3</li>
+                                    <li><i class="fas fa-bolt text-yellow"></i><?php echo $articles[2]['view']; ?></li>
+                                    <li><i class="fas fa-comments text-yellow"></i><?php echo $articles[2]['comments_count']; ?></li>
                                 </ul>
                             </section>
                         </a>
@@ -78,8 +78,8 @@ require_once(realpath(dirname(__FILE__) . "/../app/layouts/head-tag.php"));
                             </h3>
                             <ul class="caption-info-bar">
                                 <li> <?php echo date("M d,Y",strtotime( $articles[3]['created_at'])); ?></li>
-                                <li><i class="fas fa-bolt text-yellow"></i>  <?php echo $articles[3]['view']; ?></li>
-                                <li><i class="fas fa-comments text-yellow"></i> 8</li>
+                                <li><i class="fas fa-bolt text-yellow"></i><?php echo $articles[3]['view']; ?></li>
+                                <li><i class="fas fa-comments text-yellow"></i><?php echo $articles[3]['comments_count']; ?></li>
                             </ul>
                         </section>
                     </a>
@@ -96,8 +96,8 @@ require_once(realpath(dirname(__FILE__) . "/../app/layouts/head-tag.php"));
                             </h3>
                             <ul class="caption-info-bar">
                                 <li> <?php echo date("M d,Y",strtotime( $articles[4]['created_at'])); ?></li>
-                                <li><i class="fas fa-bolt text-yellow"></i> <?php echo $articles[4]['view']; ?></li>
-                                <li><i class="fas fa-comments text-yellow"></i> 12</li>
+                                <li><i class="fas fa-bolt text-yellow"></i><?php echo $articles[4]['view']; ?></li>
+                                <li><i class="fas fa-comments text-yellow"></i><?php echo $articles[4]['comments_count']; ?></li>
                             </ul>
                         </section>
                     </a>
@@ -114,8 +114,8 @@ require_once(realpath(dirname(__FILE__) . "/../app/layouts/head-tag.php"));
                             </h3>
                             <ul class="caption-info-bar">
                                 <li> <?php echo date("M d,Y",strtotime( $articles[5]['created_at'])); ?></li>
-                                <li><i class="fas fa-bolt text-yellow"></i> <?php echo $articles[5]['view']; ?></li>
-                                <li><i class="fas fa-comments text-yellow"></i> 43</li>
+                                <li><i class="fas fa-bolt text-yellow"></i><?php echo $articles[5]['view']; ?></li>
+                                <li><i class="fas fa-comments text-yellow"></i><?php echo $articles[5]['comments_count']; ?></li>
                             </ul>
                         </section>
                     </a>
@@ -123,28 +123,30 @@ require_once(realpath(dirname(__FILE__) . "/../app/layouts/head-tag.php"));
 <?php }?>
                 <section class="clear-fix"></section>
             </section>
-        </section><!--end of intro-->
+        </section>
+<!--end of intro-->
+
         <section class="container">
             <main class="main">
 
                 <section class="main-crypto-mining-news">
                     <h2 class="title">POPULAR POSTS</h2>
-
+<?php foreach ($popularArticles as $article) {?>
                         <section class="main-news-w-50">
                             <article>
-                                <img class="main-news-img" src="http://localhost/admin-panel/1" alt="">
+                                <img class="main-news-img" src="http://localhost/admin-panel/<?php echo $article['image']; ?>" alt="">
                                 <h3 class="article-title">
-                                    <a href="http://localhost/admin-panel/show-article/1">Lorem ipsum dolor sit.</a>
+                                    <a href="http://localhost/admin-panel/show-article/<?php echo $article['id']; ?>"><?php echo $article['title']; ?></a>
                                 </h3>
                                 <ul class="info-bar">
-                                    <li class=""><span class="text-muted">by</span> <a href="#" class="color-black"><b>Kaman,</b></a>
-                                        <span class="text-muted">feb 19 2019</span></li>
-                                    <li><i class="fas fa-bolt text-yellow"></i> 54</li>
-                                    <li><i class="fas fa-comments text-yellow"></i> 5</li>
+                                    <li class=""><span class="text-muted">by</span> <a href="#" class="color-black"><b><?php echo $article['username']; ?></b></a>
+                                        <span class="text-muted"><?php echo date("M d,Y",strtotime( $article['created_at'])); ?></span></li>
+                                    <li><i class="fas fa-bolt text-yellow"></i><?php echo $article['view']; ?></li>
+                                    <li><i class="fas fa-comments text-yellow"></i><?php echo $article['comments_count']; ?></li>
                                 </ul>
                             </article>
                         </section>
-
+<?php  }?>
 
                     <section class="clear-fix"></section>
                 </section><!--end of main crypto mining news-->

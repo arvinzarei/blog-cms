@@ -1,9 +1,9 @@
 <?php
 namespace AdminDashboard;
 require_once ("Admin.class.php");
- require_once (realpath(dirname(__FILE__) . "/DataBase.php"));
- use DataBase\DataBase;
- class WebSetting extends Admin {
+require_once (realpath(dirname(__FILE__) . "/DataBase.php"));
+use DataBase\DataBase;
+class WebSetting extends Admin {
 
     public function index(){
         $db= new DataBase();
@@ -33,10 +33,10 @@ require_once ("Admin.class.php");
             unset($request['icon']);
         }
         if($setting !=null)
-        $db->update('websetting', $setting['id'],array_keys($request),$request);
+            $db->update('websetting', $setting['id'],array_keys($request),$request);
         else
-        $db->insert('websetting',array_keys($request),$request);
+            $db->insert('websetting',array_keys($request),$request);
         $this->redirect('web-setting');
-        
+
     }
- }
+}
