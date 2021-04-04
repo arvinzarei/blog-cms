@@ -7,6 +7,7 @@ require_once ("admin-dashboard/CreateDB.php");
 require_once ("admin-dashboard/Menu.class.php");
 require_once ("admin-dashboard/Auth.class.php");
 require_once ("admin-dashboard/Home.class.php");
+require_once ("admin-dashboard/Comment.class.php");
 use AdminDashboard\Category;
 use AdminDashboard\User;
 use AdminDashboard\WebSetting;
@@ -14,6 +15,7 @@ use AdminDashboard\Article;
 use AdminDashboard\Menu;
 use AdminDashboard\Auth;
 use AdminDashboard\Home;
+use AdminDashboard\Comment;
 use  DataBase\CreateDB;
 //
 //$createDB= new CreateDB();
