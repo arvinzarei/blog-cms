@@ -130,8 +130,8 @@ uri('comment-store','Home','commentStore','POST');
 
 //Comments Routing
 uri('comment','Comment','index');
-uri('comment/show{id}','Comment','show');
-uri('comment/approved{id}','Comment','approved');
+uri('comment/show/{id}','Comment','show');
+uri('comment/approved/{id}','Comment','approved');
 
 
 
