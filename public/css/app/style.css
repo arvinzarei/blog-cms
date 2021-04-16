@@ -10,7 +10,7 @@
     color: #333;
 }
 body{
-    /* background-image: url("body.jpg"); */
+    background-image: url("body.png");
 }
 
 .clear-fix{
@@ -509,7 +509,7 @@ b{
     padding: 15px 0px;
     border-bottom: 1px #ffffff solid;
     text-align: center;
-    background-color: #00c7f9;
+    background-color: #F9B500;
 }
 
 .popular-post{
