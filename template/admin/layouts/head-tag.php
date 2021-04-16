@@ -33,7 +33,7 @@ $setting=$db->select("select * FROM `websetting`; ")->fetch();
         $username=$db->select("select * FROM `users` WHERE (`id` = '".$_SESSION['user']."') ;")->fetch();
         ?>
                 <a class="text-decoration-none px-3 text-dark" href="http://localhost/admin-panel/comment"><i class="fas fa-comments"></i>
-                  <?php if($unseenComments['COUNT(*)']) {?>  <span class="badge badge-danger"><?php $unseenComments['COUNT(*)'] ?></span><?php  }?> </a>
+                  <?php if($unseenComments['COUNT(*)']) {?>  <span class="badge badge-danger"><?php echo $unseenComments['COUNT(*)'] ?> new!!</span><?php  }?> </a>
             <span class="dropdown">
                 <a class="dropdown-toggle text-decoration-none text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-user"></i>
