@@ -49,13 +49,13 @@ $setting=$db->select("select * FROM `websetting`; ")->fetch();
 <div class="container-fluid">
     <div class="row">
         <nav class="col-md-2 d-none d-md-block pt-3 bg-sidebar sidebar px-0">
-            <a class="text-decoration-none d-block py-1 px-2 mt-1" href="http://localhost/admin-panel/admin"><i class="fas fa-home"></i> Home</a>
-            <a class="text-decoration-none d-block py-1 px-2 mt-1" href="http://localhost/admin-panel/category"><i class="fas fa-clipboard-list"></i> Category</a>
-            <a class="text-decoration-none d-block py-1 px-2 mt-1" href="http://localhost/admin-panel/article"><i class="fas fa-newspaper"></i> Article</a>
-            <a class="text-decoration-none d-block py-1 px-2 mt-1" href="http://localhost/admin-panel/comment"><i class="fas fa-comments"></i> Comment</a>
-            <a class="text-decoration-none d-block py-1 px-2 mt-1" href="http://localhost/admin-panel/menu"><i class="fas fa-bars"></i> Menus</a>
-            <a class="text-decoration-none d-block py-1 px-2 mt-1" href="http://localhost/admin-panel/user"><i class="fas fa-users"></i> User</a>
-            <a class="text-decoration-none d-block py-1 px-2 mt-1" href="http://localhost/admin-panel/web-setting"><i class="fas fa-tools"></i> Web Setting</a>
+            <a class="text-decoration-none d-block py-1 px-2 mt-1" href="http://localhost/admin-panel/admin"><i class="fas fa-home"></i> صفحه اصلی </a>
+            <a class="text-decoration-none d-block py-1 px-2 mt-1" href="http://localhost/admin-panel/category"><i class="fas fa-clipboard-list"></i> دسته بندی ها</a>
+            <a class="text-decoration-none d-block py-1 px-2 mt-1" href="http://localhost/admin-panel/article"><i class="fas fa-newspaper"></i> پست ها</a>
+            <a class="text-decoration-none d-block py-1 px-2 mt-1" href="http://localhost/admin-panel/comment"><i class="fas fa-comments"></i> نظرات</a>
+            <a class="text-decoration-none d-block py-1 px-2 mt-1" href="http://localhost/admin-panel/menu"><i class="fas fa-bars"></i> منوها</a>
+            <a class="text-decoration-none d-block py-1 px-2 mt-1" href="http://localhost/admin-panel/user"><i class="fas fa-users"></i> کاربران</a>
+            <a class="text-decoration-none d-block py-1 px-2 mt-1" href="http://localhost/admin-panel/web-setting"><i class="fas fa-tools"></i> تنظیمات </a>
         </nav>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">

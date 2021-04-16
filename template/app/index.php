@@ -70,11 +70,11 @@ require_once(realpath(dirname(__FILE__) . "/../app/layouts/head-tag.php"));
 <!--          POST 4          -->
 <?php if(isset($articles[3])) {?>
                 <section class="intro-1-3-col-item intro-h-100 position-relative h-md-300px">
-                    <a href="http://localhost/admin-panel/show-article/ <?php echo $articles[3]['id']; ?>">
+                    <a href="http://localhost/admin-panel/show-article/<?php echo $articles[3]['id']; ?>">
                         <section class="img-bg intro-h-100" style="background: url(http://localhost/admin-panel/<?php echo $articles[3]['image']; ?>) no-repeat center; background-size: cover;"></section>
                         <section class="intro-item-caption">
                             <h3 class="caption-title">
-                                <b> <?php echo $articles[3]['title']; ?></b>
+                                <b><?php echo $articles[3]['title']; ?></b>
                             </h3>
                             <ul class="caption-info-bar">
                                 <li> <?php echo date("M d,Y",strtotime( $articles[3]['created_at'])); ?></li>
@@ -130,11 +130,11 @@ require_once(realpath(dirname(__FILE__) . "/../app/layouts/head-tag.php"));
             <main class="main">
 
                 <section class="main-crypto-mining-news">
-                    <h2 class="title">POPULAR POSTS</h2>
+                    <h2 class="title">پر بازدیدترین پست ها</h2>
 <?php foreach ($popularArticles as $article) {?>
                         <section class="main-news-w-50">
                             <article>
-                                <img class="main-news-img" src="http://localhost/admin-panel/<?php echo $article['image']; ?>" alt="">
+                                <img class="main-news-img" src="http://localhost/admin-panel/<?php echo $article['image']; ?>" alt="" style="width:300px;height:250px;">
                                 <h3 class="article-title">
                                     <a href="http://localhost/admin-panel/show-article/<?php echo $article['id']; ?>"><?php echo $article['title']; ?></a>
                                 </h3>

@@ -7,7 +7,7 @@
         </ul>
     </section>
     <section class="sidebar-item">
-        <h2 class="title">POPULAR POSTS</h2>
+        <h2 class="title">پست های محبوب</h2>
 <?php foreach ($sidebarPopularArticles as $article) {?>
             <section class="popular-post">
                 <img class="popular-post-img" src="http://localhost/admin-panel/<?php echo $article['image']; ?>" alt="">

@@ -2,9 +2,9 @@
 require_once(realpath(dirname(__FILE__) . "/../layouts/head-tag.php"));
 ?>
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h5 "><i class="fas fa-newspaper"></i> Comments</h1>
+        <h1 class="h5 "><i class="fas fa-newspaper"></i> نظرات</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
-            <a role="button" href="#" class="btn btn-sm btn-success disabled">create</a>
+            <a role="button" href="#" class="btn btn-sm btn-success disabled">ایجاد</a>
         </div>
     </div>
     <section class="table-responsive">
@@ -13,11 +13,11 @@ require_once(realpath(dirname(__FILE__) . "/../layouts/head-tag.php"));
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>user ID</th>
-                    <th>article ID</th>
-                    <th>comment</th>
-                    <th>status</th>
-                    <th>setting</th>
+                    <th>نویسنده</th>
+                    <th>دسته بندی</th>
+                    <th>نظر</th>
+                    <th>وضعیت</th>
+                    <th>تنظیمات</th>
                 </tr>
             </thead>
             <tbody>
@@ -30,9 +30,9 @@ require_once(realpath(dirname(__FILE__) . "/../layouts/head-tag.php"));
                     <td><?php echo $comment['status']; ?></td>
                     <td>
                         <?php if($comment['status']  == 'seen') {?>
-                        <a role="button" class="btn btn-sm btn-success text-white" href="http://localhost/admin-panel/comment/approved/<?php echo $comment['id']; ?>">click to approved</a>
+                        <a role="button" class="btn btn-sm btn-success text-white" href="http://localhost/admin-panel/comment/approved/<?php echo $comment['id']; ?>">تایید</a>
                         <?php } else{?>
-                          <a role="button" class="btn btn-sm btn-warning text-white" href="http://localhost/admin-panel/comment/approved/<?php echo $comment['id']; ?>">click to not approved</a>
+                          <a role="button" class="btn btn-sm btn-info text-white" href="http://localhost/admin-panel/comment/approved/<?php echo $comment['id']; ?>">عدم تایید</a>
                         <?php } ?>
                       </td>
                 </tr>

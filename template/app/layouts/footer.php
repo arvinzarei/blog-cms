@@ -8,43 +8,38 @@
                 <section class="clear-fix"></section>
                 <p class="footer-p"><?php echo $setting['description'];?></p>
                 <p class="footer-p footer-p-margin-20"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    Copyright 2019 All rights reserved | This template is made with <i class="ion-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                    Copyright 2021 All rights reserved | This template is made <i class="ion-heart" aria-hidden="true"></i> by  <a href="https://www.linkedin.com/in/arvin-zarei-8137a61b3/" target="_blank">Arvin Zarei</a>
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 </p>
             </section>
             <section class="footer-col">
-                <h3 class="footer-section-title">MOST POPULAR</h3>
-                <section class="footer-section-link-item">
-                    <a href="#">Its Make or Break Time for Bitcoin</a>
-                    <p>Jan 25, 2018</p>
-                </section>
-                <section class="footer-line"></section>
-                <section class="footer-section-link-item">
-                    <a href="#">Its Make or Break Time for Bitcoin</a>
-                    <p>Jan 25, 2018</p>
-                </section>
+                <h3 class="footer-section-title">محبوب ترین ها</h3>
+                <?php foreach ($popularArticles as $article) {?>
+                    <section class="footer-section-link-item">
+                        <a href="http://localhost/admin-panel/show-article/<?php echo $article['id']; ?>"><?php echo $article['summary'];?></a>
+                    </section>
+                    <section class="footer-line"></section>
+                <?php }?>
             </section>
+
             <section class="footer-col">
-                <h3 class="footer-section-title">MOST POPULAR</h3>
-                <section class="footer-section-link-item">
-                    <a href="#">Its Make or Break Time for Bitcoin</a>
-                    <p>Jan 25, 2018</p>
-                </section>
-                <section class="footer-line"></section>
-                <section class="footer-section-link-item">
-                    <a href="#">Its Make or Break Time for Bitcoin</a>
-                    <p>Jan 25, 2018</p>
-                </section>
+                <h3 class="footer-section-title">دسته بندی ها </h3>
+                <?php foreach ($popularArticles as $article) {?>
+                    <section class="footer-section-link-item">
+                        <a href="http://localhost/admin-panel/show-article/<?php echo $article['id']; ?>"><?php echo $article['summary'];?></a>
+                    </section>
+                    <section class="footer-line"></section>
+                <?php }?>
             </section>
+
             <section class="clear-fix"></section>
         </section>
         <section class="footer-line"></section>
         <section class="footer-row">
-            <ul class="footer-menu">
-                <li><a href="">Terms & Conditions</a></li>
-                <li><a href="">Privacy policy</a></li>
-                <li><a href="">Jobs advertising</a></li>
-                <li><a href="">Contact us</a></li>
+            <ul class="footer-menu" style="text-align: right">
+            <?php  foreach ($menus as $menu) { ?>
+                <li><a href=""><?php echo $menu['name']; ?></a></li>
+            <?php }?>
             </ul>
             <ul class="footer-social-network">
                 <li><a href=""><i class="fab fa-facebook"></i></a></li>
