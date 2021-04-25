@@ -9,7 +9,7 @@ require_once(realpath(dirname(__FILE__) . "/../layouts/head-tag.php"));
     </div>
     <section class="table-responsive">
         <table class="table table-striped table-sm">
-            <caption>List of comments</caption>
+            <caption>لیست نظرات</caption>
             <thead>
                 <tr>
                     <th>#</th>

@@ -1,5 +1,3 @@
-
-
 <footer class="footer">
     <section class="app bg-map">
         <section class="footer-row">

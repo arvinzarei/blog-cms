@@ -58,4 +58,4 @@ $setting=$db->select("select * FROM `websetting`; ")->fetch();
             <a class="text-decoration-none d-block py-1 px-2 mt-1" href="http://localhost/admin-panel/web-setting"><i class="fas fa-tools"></i> تنظیمات </a>
         </nav>
 
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4"> 

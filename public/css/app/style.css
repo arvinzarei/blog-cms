@@ -145,10 +145,7 @@ b{
     font-weight: 600;
     /*height: 80px;*/
 }
-/*.header:after{*/
-    /*content: '';*/
-    /*clear: both;*/
-/*}*/
+
 
 .header-logo{
     float: left;
@@ -196,9 +193,6 @@ b{
     padding: 0px 15px;
     font-weight: 700;
     color: #333;
-}
-.header-menu-item-link:hover{
-
 }
 
 .header-menu-burger{
