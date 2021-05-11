@@ -95,10 +95,6 @@ class CreateDB extends DataBase
             $this->insert($tableInitialize['table'], $tableInitialize['fields'], $tableInitialize['values']);
         }
     }
-
-
-
-
 }
 
 
