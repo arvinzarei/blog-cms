@@ -2,11 +2,9 @@
 require_once(realpath(dirname(__FILE__) . "/../layouts/head-tag.php"));
 ?>
 
-
-                <section class="pt-3 pb-1 mb-2 border-bottom">
-        <h1 class="h5">Show Menu</h1>
-    </section>
-
+<section class="pt-3 pb-1 mb-2 border-bottom">
+    <h1 class="h5">Show Menu</h1>
+</section>
     <section class="row my-3">
         <section class="col-12">
             <h1 class="h4 border-bottom">name : <?php $menu['name']; ?></h1>
