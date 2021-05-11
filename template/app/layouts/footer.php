@@ -5,9 +5,8 @@
                 <img class="footer-logo" src="http://localhost/admin-panel/<?php echo $setting['logo'];?>" alt="">
                 <section class="clear-fix"></section>
                 <p class="footer-p"><?php echo $setting['description'];?></p>
-                <p class="footer-p footer-p-margin-20"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                <p class="footer-p footer-p-margin-20">
                     Copyright 2021 All rights reserved | This template is made <i class="ion-heart" aria-hidden="true"></i> by  <a href="https://www.linkedin.com/in/arvin-zarei-8137a61b3/" target="_blank">Arvin Zarei</a>
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 </p>
             </section>
             <section class="footer-col">
@@ -35,9 +34,9 @@
         <section class="footer-line"></section>
         <section class="footer-row">
             <ul class="footer-menu" style="text-align: right">
-            <?php  foreach ($menus as $menu) { ?>
-                <li><a href=""><?php echo $menu['name']; ?></a></li>
-            <?php }?>
+                <?php  foreach ($menus as $menu) { ?>
+                    <li><a href=""><?php echo $menu['name']; ?></a></li>
+                <?php }?>
             </ul>
             <ul class="footer-social-network">
                 <li><a href=""><i class="fab fa-facebook"></i></a></li>
@@ -48,9 +47,9 @@
             </ul>
             <section class="clear-fix"></section>
         </section>
-    </section><!--end of second app section-->
+    </section>
     <section class="clear-fix"></section>
-</footer><!--end of footer-->
+</footer>
 
 <script type="text/javascript">
     function showMenu() {
