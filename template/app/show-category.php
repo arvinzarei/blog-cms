@@ -1,12 +1,12 @@
 <?php
 require_once(realpath(dirname(__FILE__) . "/../app/layouts/head-tag.php"));
 ?>
-    <section class="content">
-        <section class="container">
-            <main class="main">
-                <section class="main-crypto-mining-news">
-                    <h2 class="title"><?php echo $category['name']; ?></h2>
-                 <?php foreach ($articles as $article) {?>
+<section class="content">
+    <section class="container">
+        <main class="main">
+            <section class="main-crypto-mining-news">
+                <h2 class="title"><?php echo $category['name']; ?></h2>
+                <?php foreach ($articles as $article) {?>
                     <section class="main-news-w-50">
                         <article>
                             <img class="main-news-img" src="http://localhost/admin-panel/<?php echo $article['image']; ?>" alt="">
@@ -21,17 +21,17 @@ require_once(realpath(dirname(__FILE__) . "/../app/layouts/head-tag.php"));
                             </ul>
                         </article>
                     </section>
-                 <?php }?>
-                    <section class="clear-fix"></section>
-                </section><!--end of main crypto mining news-->
-            </main><!--end of main-->
+                <?php }?>
+                <section class="clear-fix"></section>
+            </section><!--end of main crypto mining news-->
+        </main><!--end of main-->
 
- <?php require_once(realpath(dirname(__FILE__) . "/../app/layouts/sidebar.php")); ?>
+        <?php require_once(realpath(dirname(__FILE__) . "/../app/layouts/sidebar.php")); ?>
 
-            <section class="clear-fix"></section>
-        </section><!--end of container-->
-    </section><!--end of content-->
-    </section><!--end of first app section-->
+        <section class="clear-fix"></section>
+    </section><!--end of container-->
+</section><!--end of content-->
+</section><!--end of first app section-->
 
 <?php
 require_once(realpath(dirname(__FILE__) . "/../app/layouts/footer.php"));
