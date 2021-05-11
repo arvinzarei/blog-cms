@@ -2,29 +2,28 @@
 require_once(realpath(dirname(__FILE__) . "/../layouts/head-tag.php"));
 ?>
 
-
-    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h5 "><i class="fas fa-newspaper"></i> کاربران</h1>
-        <div class="btn-toolbar mb-2 mb-md-0">
-            <a role="button" href="#" class="btn btn-sm btn-success disabled">ایجاد</a>
-        </div>
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h5 "><i class="fas fa-newspaper"></i> کاربران</h1>
+    <div class="btn-toolbar mb-2 mb-md-0">
+        <a role="button" href="#" class="btn btn-sm btn-success disabled">ایجاد</a>
     </div>
-    <section class="table-responsive">
-        <table class="table table-striped table-sm">
-            <caption>لیست کاربران</caption>
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>نام کاربری</th>
-                    <th>ایمیل</th>
-                    <th>رمز عبور</th>
-                    <th>سطح دسترسی</th>
-                    <th>تاریخ ایجاد</th>
-                    <th>تنظیمات</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach($users as $user)  {?>
+</div>
+<section class="table-responsive">
+    <table class="table table-striped table-sm">
+        <caption>لیست کاربران</caption>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>نام کاربری</th>
+                <th>ایمیل</th>
+                <th>رمز عبور</th>
+                <th>سطح دسترسی</th>
+                <th>تاریخ ایجاد</th>
+                <th>تنظیمات</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach($users as $user)  {?>
                 <tr>
                     <td><?php echo $user["id"] ?></td>
                     <td><?php echo $user["username"] ?></td>
@@ -44,11 +43,11 @@ require_once(realpath(dirname(__FILE__) . "/../layouts/head-tag.php"));
                         <a role="button" class="btn btn-sm btn-danger text-white" href="http://localhost/admin-panel/user/delete/<?php echo $user["id"] ?>">حذف</a>
                     </td>
                 </tr>
-                <?php } ?>
-            </tbody>
-        </table>
-    </section>
+            <?php } ?>
+        </tbody>
+    </table>
+</section>
 
-    <?php
+<?php
 require_once(realpath(dirname(__FILE__) . "/../layouts/footer.php"));
 ?>

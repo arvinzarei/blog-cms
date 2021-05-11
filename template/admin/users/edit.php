@@ -2,15 +2,12 @@
 require_once(realpath(dirname(__FILE__) . "/../layouts/head-tag.php"));
 ?>
 
-
-
-        <section class="pt-3 pb-1 mb-2 border-bottom">
-        <h1 class="h5"> ویرایش کاربر</h1>
-    </section>
+<section class="pt-3 pb-1 mb-2 border-bottom">
+    <h1 class="h5"> ویرایش کاربر</h1>
+</section>
 
 <section class="row my-3">
     <section class="col-12">
-
         <form method="post" action="http://localhost/admin-panel/user/update/<?php echo $id ?>" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="username">نام کاربری</label>
@@ -36,7 +33,6 @@ require_once(realpath(dirname(__FILE__) . "/../layouts/head-tag.php"));
             </div>
             <button type="submit" class="btn btn-primary btn-sm">بروز رسانی</button>
         </form>
-
     </section>
 </section>
 
