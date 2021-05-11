@@ -34,5 +34,5 @@
             <?php } ?>
             </ul>
             <section class="clear-fix"></section>
-        </nav><!--end of navbar-->
-    </header><!--end of header-->
+        </nav>
+    </header>
